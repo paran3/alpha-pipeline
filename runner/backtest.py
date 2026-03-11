@@ -70,7 +70,7 @@ async def run_backtest(
 
     metrics = compute_metrics(portfolio, risk_free_rate=settings.RISK_FREE_RATE_ANNUAL)
 
-    emit(run_id, "complete", 100)
+    await emit(run_id, "complete", 100)
 
     return {
         "run_id": run_id,
